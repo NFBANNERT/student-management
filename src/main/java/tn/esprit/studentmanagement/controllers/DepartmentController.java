@@ -20,7 +20,7 @@ public class DepartmentController {
     public List<Department> getAllDepartment() { return departmentService.getAllDepartments(); }
 
     @GetMapping("/getDepartment/{id}")
-    public Department getDepartment(@PathVariable Long id) { return departmentService.getDepartmentById(id); }
+    public Department getDepartment(@PathVariable Long id) { return departmentService.getDepartmentById(id).orElse(null); }
 
     @PostMapping("/createDepartment")
     public Department createDepartment(@RequestBody Department department) { return departmentService.saveDepartment(department); }
