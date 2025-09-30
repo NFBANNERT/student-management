@@ -16,8 +16,8 @@ public class EnrollmentController {
     IEnrollment enrollmentService;
     @GetMapping("/getAllEnrollment")
     public List<Enrollment> getAllEnrollment() { return enrollmentService.getAllEnrollments(); }
-    
-    //Friendly comment to test Jenking Auto Pulling
+
+    //Friendly comment : Test jenkins Trigger
     @GetMapping("/getEnrollment/{id}")
     public Optional<Enrollment> getEnrollment(@PathVariable Long id) {
         return enrollmentService.getEnrollmentById(id); }
