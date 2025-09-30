@@ -6,6 +6,7 @@ import tn.esprit.studentmanagement.entities.Enrollment;
 import tn.esprit.studentmanagement.services.IEnrollment;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/Enrollment")
@@ -17,7 +18,8 @@ public class EnrollmentController {
     public List<Enrollment> getAllEnrollment() { return enrollmentService.getAllEnrollments(); }
 
     @GetMapping("/getEnrollment/{id}")
-    public Enrollment getEnrollment(@PathVariable Long id) { return enrollmentService.getEnrollmentById(id); }
+    public Optional<Enrollment> getEnrollment(@PathVariable Long id) {
+        return enrollmentService.getEnrollmentById(id); }
 
     @PostMapping("/createEnrollment")
     public Enrollment createEnrollment(@RequestBody Enrollment enrollment) { return enrollmentService.saveEnrollment(enrollment); }
